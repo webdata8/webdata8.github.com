@@ -1,0 +1,44 @@
+---
+layout: default
+description: 网站分析工具常用的有谷歌分析，百度统计等，WebData8.com希望从Omniture等网站分析产品出发，分享网站数据分析的方法心得，也包括UCD、SEO和PM等相关领域。
+---
+
+<main class="content" role="main">
+
+  <header class="blog-header">
+      <h1 class="blog-title">{{ site.heading }}</h1>
+      <h2 class="blog-description">{{ site.subheading }}</h2>
+  </header>
+
+  <div class="cf frame">
+    {% for post in paginator.posts %}
+    {% if post.publish %}
+      <article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
+        <div class="article-item">
+          <header class="post-header">
+            <h2 class="post-title" itemprop="name"><a href="{{ post.url }}" itemprop="url">{{ post.heading }}</a></h2>
+          </header>
+          <section class="post-excerpt" itemprop="description">
+            <p>{{ post.content | strip_html | strip_newlines | truncate:200 }}</p>
+          </section>
+          <div class="post-meta">
+            <time datetime="{{ post.date | date_to_long_string }}">{{ post.date | date: '%B %d, %Y' }}</time>
+          </div>
+        </div>
+      </article>
+    {% endif %}
+    {% endfor %}
+  </div>
+
+  <nav class="pagination" role="navigation">
+    {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="older-posts">上一页</a>
+      {% endif %}
+      {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="newer-posts">下一页</a>
+      {% endif %}
+  </nav>
+
+</main>
+
+{% include footer.html %}

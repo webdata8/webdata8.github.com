@@ -1,0 +1,27 @@
+title: 网站分析，工具只是工具-关注Web Analytics并分析网站数据吧！
+heading: 网站分析
+subheading: 本站期待和大家交流并分享网站分析、Omniture、SEO、数据分析和电子商务等互联网相关领域。
+email: your-email@domain.com
+logo: "/assets/img/logo.jpg"
+
+url: "https://www.webdata8.com"
+baseurl: ""
+
+# Paginate
+gems: [jekyll-paginate]
+paginate: 10
+paginate_path: "/page:num/"
+
+# Build settings
+permalink: /:categories/:title/
+encoding: UTF-8
+markdown: kramdown
+highlighter: rouge
+timezone: "America/Los Angeles"
+
+google_analytics: UA-38580990-1
+google_webmaster:
+disqus:
+
+kramdown:
+  parse_block_html: true
