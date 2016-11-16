@@ -22,4 +22,7 @@
   {% if paginator.next_page %}
   <link rel="next" href="{{ paginator.next_page_path | prepend: site.url }}" />
   {% endif %}
+  {% if site.google_webmaster %} 
+    <meta name="google-site-verification" content="{{ site.google_webmaster }}" /> 
+   {% endif %}
 </head>
